@@ -1,25 +1,27 @@
 ############# importar librerias o recursos#####
-
-from flask import Flask, request, jsonify
 import mysql.connector
+from flask import Flask, request, jsonify, render_template
 # redirect, session, flash, , send_from_directory
 
-
+from flask_mysqldb import MySQL #Conectarse a mysql
 from flask_cors import CORS, cross_origin
 #import os
 # initializations
 app = Flask(__name__) #crear api y servidor 
 CORS(app)
+from datetime import datetime
 
 app.static_folder = 'css'
 
 # Mysql Connection
-db_config = {
-    'host': 'bq9gjibsp4ignub9xitt-mysql.services.clever-cloud.com',
-    'user': 'u1dmk9pgohynnhaa',
-    'password': 'KjHsIdrtPC81gHQ0aUfN',
-    'database': 'bq9gjibsp4ignub9xitt'
-}
+app.config['MYSQL_HOST'] = 'bq9gjibsp4ignub9xitt-mysql.services.clever-cloud.com'  #parametros para una base de datos desde la linea 14-19
+app.config['MYSQL_USER'] = 'u1dmk9pgohynnhaa' #usuario para php
+app.config['MYSQL_PASSWORD'] = 'KjHsIdrtPC81gHQ0aUfN' #contraseña para entrar a la base de datos
+app.config['MYSQL_DB'] = 'bq9gjibsp4ignub9xitt' #nombre de la base de datos
+####---- app.config['MYSQL_PORT'] = 1234 ----####
+#cunado el xampp toca cambiar el puerto toca pner EL app.config[port]
+
+mysql = MySQL(app)
 ####---- app.config['MYSQL_PORT'] = 1234 ----####
 #cunado el xampp toca cambiar el puerto toca pner EL app.config[port]
 
