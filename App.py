@@ -20,7 +20,7 @@ app = Flask(__name__)
 CORS(app)
 from datetime import datetime
 
-app.static_folder = 'css'
+#app.static_folder = 'css'
 
 @app.route('/')
 def home():
