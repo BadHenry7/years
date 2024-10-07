@@ -22,6 +22,10 @@ from datetime import datetime
 
 app.static_folder = 'css'
 
+@app.route('/')
+def home():
+    return render_template('main.html')
+
 
 ####---- app.config['MYSQL_PORT'] = 1234 ----####
 #cunado el xampp toca cambiar el puerto toca pner EL app.config[port]
