@@ -1,0 +1,41 @@
+
+http://127.0.0.1:8000/docs
+
+
+1.- pip install virtualenv
+
+-->creacion de entorno virtual
+2.- python -m venv myvenv
+
+
+
+ 3.- --> acceder al entorno
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+cd myvenv 
+cd .\Scripts\ 
+.\activate
+
+
+cd..
+cd..
+cd app
+fastapi dev main.py
+
+
+
+--> librerias(dentro del cd app)
+pip install mysql-connector-python
+
+
+--> instalar fast api(dentro del cd app)
+pip install "fastapi[standard]"
+
+
+
+pip install 
+pip install flask
+pip install flask_mysqldb
+pip install flask_cors
+
+
+

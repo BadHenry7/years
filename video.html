@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Madre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* Alinear elementos en columna */
+            justify-content: flex-start;
+            /* Alinear desde la parte superior */
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: orange;
+            position: sticky;
+            /* Mantener la barra en la parte superior al hacer scroll */
+            top: 0;
+            /* Posición en la parte superior */
+            z-index: 1000;
+            /* Asegurarse de que esté por encima de otros elementos */
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: lightyellow;
+        }
+
+        /* Estilos para la rueda */
+        .wheel {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: spin 4s linear infinite;
+            overflow: hidden;
+            margin: 20px 0;
+            /* Espacio entre la rueda y el texto */
+        }
+
+        /* Piezas de la rueda */
+        .slice {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: transparent;
+            clip-path: polygon(100% 100%, 0 100%, 0 0);
+            transform-origin: 100% 100%;
+        }
+
+        /* Colores para cada segmento */
+        .slice:nth-child(1) {
+            background-color: red;
+            transform: rotate(0deg);
+        }
+
+        .slice:nth-child(2) {
+            background-color: orange;
+            transform: rotate(60deg);
+        }
+
+        .slice:nth-child(3) {
+            background-color: yellow;
+            transform: rotate(120deg);
+        }
+
+        .slice:nth-child(4) {
+            background-color: green;
+            transform: rotate(180deg);
+        }
+
+        .slice:nth-child(5) {
+            background-color: blue;
+            transform: rotate(240deg);
+        }
+
+        .slice:nth-child(6) {
+            background-color: purple;
+            transform: rotate(300deg);
+        }
+
+        /* Animación de giro */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Estilos para el mensaje */
+        .message {
+            font-size: 3rem;
+            /* Tamaño grande */
+            font-weight: bold;
+            color: orange;
+            /* Color del texto */
+            animation: slide-up 2s ease-out forwards;
+            /* Animación */
+            opacity: 0;
+            /* Comienza invisible */
+        }
+
+        /* Animación del texto */
+        @keyframes slide-up {
+            0% {
+                transform: translateY(50px);
+                /* Inicia 50px hacia abajo */
+                opacity: 0;
+                /* Invisible */
+            }
+
+            100% {
+                transform: translateY(0);
+                /* Termina en su posición original */
+                opacity: 1;
+                /* Visible */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-2 px-4" href="figura.html">Figura 1</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 px-4" href="figura2.html">Figura 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 px-4" href="figura3.html">Figura 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 px-4" href="figura4.html">Figura 4</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 px-4" href="video.html">Video</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor de la rueda de colores -->
+    <div class="wheel" data-bs-toggle="modal"  data-bs-target="#Volver">
+        <div class="slice"></div>
+        <div class="slice"></div>
+        <div class="slice"></div>
+        <div class="slice"></div>
+        <div class="slice"></div>
+        <div class="slice"></div>
+    </div>
+
+    <!-- Mensaje de cumpleaños -->
+    <div class="message col-9">¡Feliz Cumpleaños Madre!</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+            background: url('img/image8.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+
+
+
+    <div class="modal fade" id="Volver" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-warning">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mleModalLabel"><b class="text-primary">🎡Felicidades🎡</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 1.5em; text-align: center; color: #555;">
+                        🎡La rueda del tiempo gira sin parar,<br>
+                        trayendo momentos que hoy vas a celebrar.<br>
+                        Cada vuelta es un ciclo de vida y amor,<br>
+                        que envuelve tus días en calor.<br><br>
+                    
+                        Al compás de los años que van y vienen,<br>
+                        la rueda te lleva por lo que conviene.<br>
+                        Con cada giro, un recuerdo guardado,<br>
+                        de risas, de abrazos, de todo lo amado.<br><br>
+                    
+                        Que esta rueda te guíe a un futuro brillante,<br>
+                        como el sol que ilumina cada instante.<br>
+                        ¡Feliz cumpleaños, que nunca te falte,<br>
+                        la rueda que te lleve siempre adelante!🎡
+                    </p>
+                    
+
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<style>
+
+    body {
+      
+        font-family: Arial, sans-serif;
+        background: url('img/image8.png') no-repeat center center fixed;
+        background-size: cover;
+      
+        height: 100vh;
+    }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    </body>
+    
+    
+    <div class="modal fade" id="Volver" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-warning">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mleModalLabel"><b class="text-primary">Felicidades</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+    
+                    <p>❣️En el latido de un corazón encendido,  
+                        late el amor, el más puro y querido.  
+                        Hoy celebro tu vida, un bello resplandor,  
+                       <b> ¡Feliz cumpleaños, madre, con todo mi amor!</b></p>
+                        
+                        <p>Cada pulso es un canto, una melodía,  
+                        que en este día especial te envuelve de alegría.  
+                        Como el corazón que nunca deja de latir,  
+                        mi gratitud por ti no dejará de existir.</p>
+                        
+                        <p>Hoy el cielo te sonríe, y las flores se abren,  
+                        los colores del día tus sueños abarcan.  
+                        Que este corazón, en su danzar constante,  
+                        te recuerde que eres mi alegría vibrante.</p>
+                        
+                        <p>¡Feliz cumpleaños, madre adorada!  
+                        Hoy y siempre serás mi estrella dorada.  
+                        Que cada latido te llene de ilusión,  
+                        y cada año renueve la fuerza en tu corazón❣️</p>
+                        
+                </div>
+                <div class="modal-footer" >
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

@@ -1,0 +1,7 @@
+mysql-connector-python
+flask
+flask_mysqldb
+flask_cors
+
+
+
