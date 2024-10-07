@@ -14,10 +14,10 @@ from datetime import datetime
 app.static_folder = 'css'
 
 # Mysql Connection
-app.config['MYSQL_HOST'] = 'localhost'  #parametros para una base de datos desde la linea 14-19
-app.config['MYSQL_USER'] = 'root' #usuario para php
-app.config['MYSQL_PASSWORD'] = '' #contraseña para entrar a la base de datos
-app.config['MYSQL_DB'] = 'years' #nombre de la base de datos
+app.config['MYSQL_HOST'] = 'bq9gjibsp4ignub9xitt-mysql.services.clever-cloud.com'  #parametros para una base de datos desde la linea 14-19
+app.config['MYSQL_USER'] = 'u1dmk9pgohynnhaa' #usuario para php
+app.config['MYSQL_PASSWORD'] = 'KjHsIdrtPC81gHQ0aUfN' #contraseña para entrar a la base de datos
+app.config['MYSQL_DB'] = 'bq9gjibsp4ignub9xitt' #nombre de la base de datos
 ####---- app.config['MYSQL_PORT'] = 1234 ----####
 #cunado el xampp toca cambiar el puerto toca pner EL app.config[port]
 
