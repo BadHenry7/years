@@ -1,27 +1,29 @@
 ############# importar librerias o recursos#####
 
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
+import mysql.connector
 # redirect, session, flash, , send_from_directory
 
-from flask_mysqldb import MySQL #Conectarse a mysql
+
 from flask_cors import CORS, cross_origin
 #import os
 # initializations
 app = Flask(__name__) #crear api y servidor 
 CORS(app)
-from datetime import datetime
 
 app.static_folder = 'css'
 
 # Mysql Connection
-app.config['MYSQL_HOST'] = 'bq9gjibsp4ignub9xitt-mysql.services.clever-cloud.com'  #parametros para una base de datos desde la linea 14-19
-app.config['MYSQL_USER'] = 'u1dmk9pgohynnhaa' #usuario para php
-app.config['MYSQL_PASSWORD'] = 'KjHsIdrtPC81gHQ0aUfN' #contraseña para entrar a la base de datos
-app.config['MYSQL_DB'] = 'bq9gjibsp4ignub9xitt' #nombre de la base de datos
+db_config = {
+    'host': 'bq9gjibsp4ignub9xitt-mysql.services.clever-cloud.com',
+    'user': 'u1dmk9pgohynnhaa',
+    'password': 'KjHsIdrtPC81gHQ0aUfN',
+    'database': 'bq9gjibsp4ignub9xitt'
+}
 ####---- app.config['MYSQL_PORT'] = 1234 ----####
 #cunado el xampp toca cambiar el puerto toca pner EL app.config[port]
 
-mysql = MySQL(app)
+
 
 # settings A partir de ese momento Flask utilizará esta clave para poder cifrar la información de la cookie
 app.secret_key = "mysecretkey"
@@ -34,7 +36,7 @@ def getcompare():
     try:
         v_correo = request.json['correo']
         v_password = request.json['password']
-        cur = mysql.connection.cursor() #conectar con la base de datos ↓
+        cur = mysql.connection.cursor(**db_config) #conectar con la base de datos ↓
         cur.execute('SELECT correo, password FROM usuario where correo =%s AND password =%s',(v_correo,v_password)) #ejecutar el scrip
         rv = cur.fetchall() #consultar todos los registros
         cur.close() # cierra la conexion que abrimos arriba        ↑
@@ -61,7 +63,7 @@ def add_usuario():
 
         
         email = request.json['name']  
-        cur = mysql.connection.cursor() #conectar con la base de datos ↓
+        cur = mysql.connection.cursor(**db_config) #conectar con la base de datos ↓
         cur.execute('SELECT correo, password FROM usuario where correo =%s',(email,)) #ejecutar el scrip
         rv = cur.fetchall() #consultar todos los registros
         cur.close() # cierra la conexion que abrimos arriba        ↑
@@ -94,7 +96,8 @@ def add_usuario():
         
     except Exception as e:
         print(e)
-        return render_template({"informacion":e})
+        return jsonify({"informacion":e})
+    
     
 """@app.route('/corazon')
 def corazon():
@@ -117,5 +120,8 @@ def corazon():
 
 
 # starting the app
-if __name__ == "__main__":
-    app.run(port=3000, debug=True)
+"""if __name__ == "__main__":
+    app.run(port=3000, debug=True)"""
+
+if __name__ == '__main__':
+    app.run(debug=True)
