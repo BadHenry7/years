@@ -26,6 +26,30 @@ from datetime import datetime
 def home():
     return render_template('main.html')
 
+@app.route('/years')
+def years():
+    return render_template('years.html')
+@app.route('/figura')
+def figura():
+    return render_template('figura.html')
+
+@app.route('/figura2')
+def figura2():
+    return render_template('figura2.html')
+
+@app.route('/figura3')
+def figura3():
+    return render_template('figura3.html')
+
+@app.route('/figura4')
+def figura4():
+    return render_template('figura4.html')
+
+@app.route('/video')
+def video():
+    return render_template('video.html')
+
+
 
 ####---- app.config['MYSQL_PORT'] = 1234 ----####
 #cunado el xampp toca cambiar el puerto toca pner EL app.config[port]

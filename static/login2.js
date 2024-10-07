@@ -62,7 +62,7 @@ function iniciar(id) {
       //let usuarios1 = miStorage.getItem("usuario");
       let usuarios = JSON.parse(miStorage.getItem('usuario'));
 
-      window.location.href = "years.html";
+      window.location.href = "/years";
       var active = true;
 
     } else {
