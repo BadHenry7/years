@@ -41,10 +41,11 @@ app.secret_key = "mysecretkey"
 @app.route('/compare', methods=['POST'])
 def getcompare():
     try:
-
+        connection = get_db_connection()
+        cur = connection.cursor()
         v_correo = request.json['correo']
         v_password = request.json['password']
-        cur =get_db_connection() #conectar con la base de datos ↓
+        
         cur.execute('SELECT correo, password FROM usuario where correo =%s AND password =%s',(v_correo,v_password)) #ejecutar el scrip
         rv = cur.fetchall() #consultar todos los registros
         cur.close() # cierra la conexion que abrimos arriba        ↑
@@ -68,10 +69,10 @@ def getcompare():
 @app.route('/add_usuario', methods=['POST'])
 def add_usuario():
     try:
-
+        connection = get_db_connection()
+        cur = connection.cursor()
         
         email = request.json['name']  
-        cur = get_db_connection() #conectar con la base de datos ↓
         cur.execute('SELECT correo, password FROM usuario where correo =%s',(email,)) #ejecutar el scrip
         rv = cur.fetchall() #consultar todos los registros
         cur.close() # cierra la conexion que abrimos arriba        ↑
@@ -128,8 +129,8 @@ def corazon():
 
 
 # starting the app
-"""if __name__ == "__main__":
-    app.run(port=3000, debug=True)"""
-
+if __name__ == "__main__":
+    app.run(port=3000, debug=True)
+"""
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)"""
