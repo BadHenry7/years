@@ -120,10 +120,10 @@ def add_usuario():
         if not payload: 
             email = request.json['name']  ## nombre
             password = request.json['password']        ## contraseña
-            cur = mysql.connection.cursor()
+            cur = connection.cursor()
             print ("h",cur)
             cur.execute("INSERT INTO usuario (correo, password) VALUES (%s,%s)", (email, password,))
-            mysql.connection.commit()
+            connection.commit()
             payload = []
             content = {}    
             content={"Informacion":"Registro_exitoso"}
