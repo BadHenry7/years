@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             axios({
                 method: 'POST',
-                url: 'http://127.0.0.1:3000/add_usuario',
+                url: 'https://years.onrender.com/add_usuario',
                 data: {
                     name: vnombres,
                     password: vcontraseña,
