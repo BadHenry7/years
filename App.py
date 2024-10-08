@@ -26,9 +26,19 @@ from datetime import datetime
 def home():
     return render_template('main.html')
 
+@app.route('/main')
+def main():
+    return render_template('main.html')
+
+
 @app.route('/years')
 def years():
     return render_template('years.html')
+
+@app.route('/Register')
+def Register():
+    return render_template('Register.html')
+
 @app.route('/figura')
 def figura():
     return render_template('figura.html')
