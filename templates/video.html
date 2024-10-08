@@ -168,17 +168,10 @@
     </nav>
 
     <!-- Contenedor de la rueda de colores -->
-    <div class="wheel" data-bs-toggle="modal"  data-bs-target="#Volver">
-        <div class="slice"></div>
-        <div class="slice"></div>
-        <div class="slice"></div>
-        <div class="slice"></div>
-        <div class="slice"></div>
-        <div class="slice"></div>
-    </div>
+ 
 
     <!-- Mensaje de cumpleaños -->
-    <div class="message col-9">¡Feliz Cumpleaños Madre!</div>
+    <div class="message col-9" data-bs-toggle="modal"  data-bs-target="#Volver">¡Feliz Cumpleaños Madre!</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
@@ -201,24 +194,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p style="font-size: 1.5em; text-align: center; color: #555;">
-                        🎡La rueda del tiempo gira sin parar,<br>
-                        trayendo momentos que hoy vas a celebrar.<br>
-                        Cada vuelta es un ciclo de vida y amor,<br>
-                        que envuelve tus días en calor.<br><br>
+                    <video width="400" controls>
+                        <source src="{{ url_for('static', filename='video/Video.mp4') }}" type="video/mp4">
+                      
+                      </video>
+                      
                     
-                        Al compás de los años que van y vienen,<br>
-                        la rueda te lleva por lo que conviene.<br>
-                        Con cada giro, un recuerdo guardado,<br>
-                        de risas, de abrazos, de todo lo amado.<br><br>
-                    
-                        Que esta rueda te guíe a un futuro brillante,<br>
-                        como el sol que ilumina cada instante.<br>
-                        ¡Feliz cumpleaños, que nunca te falte,<br>
-                        la rueda que te lleve siempre adelante!🎡
-                    </p>
-                    
-
 
                 </div>
                 <div class="modal-footer">
@@ -246,40 +227,5 @@
     </body>
     
     
-    <div class="modal fade" id="Volver" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content bg-warning">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="mleModalLabel"><b class="text-primary">Felicidades</b></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
     
-                    <p>❣️En el latido de un corazón encendido,  
-                        late el amor, el más puro y querido.  
-                        Hoy celebro tu vida, un bello resplandor,  
-                       <b> ¡Feliz cumpleaños, madre, con todo mi amor!</b></p>
-                        
-                        <p>Cada pulso es un canto, una melodía,  
-                        que en este día especial te envuelve de alegría.  
-                        Como el corazón que nunca deja de latir,  
-                        mi gratitud por ti no dejará de existir.</p>
-                        
-                        <p>Hoy el cielo te sonríe, y las flores se abren,  
-                        los colores del día tus sueños abarcan.  
-                        Que este corazón, en su danzar constante,  
-                        te recuerde que eres mi alegría vibrante.</p>
-                        
-                        <p>¡Feliz cumpleaños, madre adorada!  
-                        Hoy y siempre serás mi estrella dorada.  
-                        Que cada latido te llene de ilusión,  
-                        y cada año renueve la fuerza en tu corazón❣️</p>
-                        
-                </div>
-                <div class="modal-footer" >
-                    
-                </div>
-            </div>
-        </div>
-    </div>
 </html>
